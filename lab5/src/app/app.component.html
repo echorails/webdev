@@ -1,0 +1,18 @@
+<div class="app-container">
+  <h1>Select a Category</h1>
+
+  <div class="category-buttons">
+    <button
+      *ngFor="let category of categories"
+      (click)="selectCategory(category)"
+      [class.selected]="selectedCategory?.id === category.id">
+      {{ category.name }}
+    </button>
+  </div>
+
+  <div *ngIf="!selectedCategory">
+    Please select a category to view products.
+  </div>
+
+  <app-product-list *ngIf="selectedCategory" [products]="filteredProducts"></app-product-list>
+</div>

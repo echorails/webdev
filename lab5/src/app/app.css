@@ -1,0 +1,32 @@
+
+
+.app-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.category-buttons button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.category-buttons button:hover {
+  background: #004d99;
+}
+
+.category-buttons button.selected {
+  background: #d81e5b; 
+}

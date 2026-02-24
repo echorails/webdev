@@ -1,0 +1,29 @@
+<div class="card">
+  <img [src]="product.image" [alt]="product.name" class="image" />
+
+  <div class="content">
+    <h3 class="title">{{ product.name }}</h3>
+    <p class="desc">{{ product.description }}</p>
+
+    <div class="price">{{ product.price | number:'1.0-0' }} ₸</div>
+
+    <div class="rating">
+      <span *ngFor="let star of ratingStars" class="star">{{ star }}</span>
+      <span class="value">({{ product.rating }})</span>
+    </div>
+
+    <div class="likes">❤ {{ product.likes }}</div> 
+
+    <button class="btn-like" (click)="like()">Like</button> 
+
+    <button class="btn-delete" (click)="onDelete()">Delete</button> 
+
+    <button class="btn-share" (click)="share()">
+      Поделиться в WhatsApp
+    </button>
+
+    <a [href]="product.link" target="_blank" rel="noopener" class="link">
+      Перейти на Kaspi →
+    </a>
+  </div>
+</div>

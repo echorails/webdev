@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:host, body, html {
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+}
+
+h1 {
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+}
