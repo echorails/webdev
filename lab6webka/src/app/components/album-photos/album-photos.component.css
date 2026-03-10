@@ -1,0 +1,84 @@
+/* Основной контейнер страницы */
+.photos-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* Заголовок страницы */
+.page-title {
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Кнопка "Назад" */
+.return-btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  background-color: #64748b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 2rem;
+}
+
+.return-btn:hover {
+  background-color: #475569;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Индикатор загрузки */
+.data-loading {
+  text-align: center;
+  padding: 5rem 1rem;
+  color: #6b7280;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+/* Сетка фотографий */
+.photos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Каждая карточка фото */
+.photo-item {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.photo-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Изображение внутри карточки */
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #f3f4f6;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;   /* квадратные фото выглядят лучше */
+}
+
+/* Название/описание фото под картинкой */
+.photo-caption {
+  padding: 0.9rem 1rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.4;
+  text-align: center;
+}

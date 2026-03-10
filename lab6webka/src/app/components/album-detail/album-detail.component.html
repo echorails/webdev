@@ -1,0 +1,59 @@
+<section class="album-view">
+  <!-- Состояние загрузки -->
+  <div *ngIf="isFetching" class="fetching-indicator">
+    <span>Получаем данные альбома...</span>
+  </div>
+
+  <!-- Основной контент (когда данные загружены и альбом существует) -->
+  <ng-container *ngIf="!isFetching && currentAlbum">
+    <header class="page-header">
+      <h2>Информация об альбоме</h2>
+    </header>
+
+    <article class="album-info-panel">
+      <div class="info-row">
+        <span class="info-label">Идентификатор:</span>
+        <span class="info-value">{{ currentAlbum.id }}</span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">Пользователь:</span>
+        <span class="info-value">{{ currentAlbum.userId }}</span>
+      </div>
+
+      <div class="edit-field">
+        <label for="albumTitleInput">Название альбома:</label>
+        <input
+          id="albumTitleInput"
+          type="text"
+          class="text-field"
+          [(ngModel)]="titleBeingEdited"
+          placeholder="Введите новое название..."
+        />
+      </div>
+
+      <footer class="control-bar">
+        <button 
+          class="action-btn action-btn--save" 
+          (click)="updateAlbum()"
+        >
+          Сохранить изменения
+        </button>
+
+        <button 
+          class="action-btn action-btn--photos" 
+          [routerLink]="['/albums', currentAlbum.id, 'photos']"
+        >
+          Посмотреть фотографии
+        </button>
+
+        <button 
+          class="action-btn action-btn--cancel" 
+          (click)="returnToList()"
+        >
+          Вернуться назад
+        </button>
+      </footer>
+    </article>
+  </ng-container>
+</section>
